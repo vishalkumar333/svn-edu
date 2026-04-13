@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 8%;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* BRAND SECTION */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 45px;
+  width: auto;
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.5px;
+}
+
+.brand-text span {
+  color: #f97316; /* orange accent */
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.link {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover underline animation */
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.link:hover {
+  color: #38bdf8;
+}
+
+.link.active {
+  color: #38bdf8;
+}
