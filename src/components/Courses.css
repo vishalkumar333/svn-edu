@@ -1,0 +1,141 @@
+.page-white {
+  padding: 40px 8%;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: Arial;
+  color: #0f172a;
+}
+
+/* HEADER */
+.header-white {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header-white h1 {
+  font-size: 38px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.header-white p {
+  color: #64748b;
+}
+
+/* SEARCH */
+.header-white input {
+  margin-top: 15px;
+  width: 60%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  background: white;
+  transition: 0.3s;
+}
+
+.header-white input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* FILTERS */
+.filters-white {
+  margin-top: 15px;
+}
+
+.filters-white button {
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #0f172a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters-white button:hover {
+  background: #f1f5f9;
+}
+
+.filters-white .active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* GRID */
+.grid-white {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+/* CARD */
+.card-white {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-white:hover {
+  transform: translateY(-5px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+/* META */
+.meta-white {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.tag {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* DETAILS */
+.details-white {
+  margin-top: 12px;
+  animation: fadeIn 0.25s ease;
+  color: #475569;
+}
+
+.details-white button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.details-white button:hover {
+  background: #1d4ed8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

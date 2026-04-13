@@ -1,0 +1,158 @@
+.services-wrapper {
+  font-family: "Segoe UI", sans-serif;
+  background: #ffffff;
+  padding: 70px 8%;
+  color: #111;
+}
+
+/* HEADER */
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.services-header p {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+/* CARD */
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+/* STEPS */
+.process-section {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.process-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.step {
+  background: #f8f8f8;
+  padding: 12px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.step:hover {
+  background: #111;
+  color: #fff;
+}
+
+.step span {
+  background: #111;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+.step:hover span {
+  background: #fff;
+  color: #111;
+}
+
+/* CTA */
+.cta-box {
+  margin-top: 70px;
+  text-align: center;
+  padding: 50px 25px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f6f8ff, #ffffff);
+  border: 1px solid #eaeaea;
+}
+
+.cta-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .services-wrapper {
+    padding: 50px 5%;
+  }
+
+  .services-header h1 {
+    font-size: 2rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 100%;
+    justify-content: center;
+  }
+}
