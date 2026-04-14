@@ -1,60 +1,126 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => setOpen(false);
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Courses", path: "/courses" },
+    { name: "Contact", path: "/contact" },
+    { name: "About", path: "/about" },
+  ];
 
   return (
-    <nav className="navbar">
+    <>
+      {/* NAVBAR */}
+      <header className="nav">
+        <div className="nav-container">
 
-      {/* BRAND */}
-      <NavLink to="/" className="brand" onClick={closeMenu}>
-        <img src="/logo.png" alt="logo" className="brand-logo" />
-        <h2 className="brand-text">
-          SVN <span>EduCon</span>
-        </h2>
-      </NavLink>
+          {/* LOGO */}
+          <NavLink to="/" className="logo">
+            <img src="/logo.png" alt="logo" />
+            <span>SVN <b>EduCon</b></span>
+          </NavLink>
 
-      {/* HAMBURGER */}
-      <div className="hamburger" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+          {/* DESKTOP MENU */}
+          <nav className="desktop-menu">
+            {links.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
 
-      {/* NAV LINKS */}
-      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <li>
-          <NavLink to="/" className="link" onClick={closeMenu}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/services" className="link" onClick={closeMenu}>
-            Services
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/courses" className="link" onClick={closeMenu}>
-            Courses
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" className="link" onClick={closeMenu}>
-            Contact
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" className="link" onClick={closeMenu}>
-            About
-          </NavLink>
-        </li>
-      </ul>
+          {/* HAMBURGER */}
+          <button
+            className={`hamburger ${open ? "open" : ""}`}
+            onClick={() => setOpen(!open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </header>
 
-    </nav>
+      {/* OVERLAY */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeMenu}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* MOBILE DRAWER */}
+      <AnimatePresence>
+        {open && (
+          <motion.aside
+            className="drawer"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 120, damping: 18 }}
+          >
+            <motion.nav
+              className="mobile-menu"
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                show: {
+                  transition: {
+                    staggerChildren: 0.08,
+                  },
+                },
+              }}
+            >
+              {links.map((item) => (
+                <motion.div
+                  key={item.path}
+                  variants={{
+                    hidden: { opacity: 0, x: 25 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                >
+                  <NavLink
+                    to={item.path}
+                    className="mobile-link"
+                    onClick={closeMenu}
+                  >
+                    {item.name}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.nav>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

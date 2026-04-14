@@ -27,12 +27,11 @@ export default function Contact() {
           </p>
 
           <div className="info-box">
-            📍 MG Nagar, Kanti Factory Road Near PNB Opp. Dr Pramila Gupta Clinic,
-            Kankarbagh, Patna - 800026
+            📍 Ganga complex SBI life, near Nagarmall Kankarbagh. Patna (Bihar) - 800020
           </div>
 
           <div className="info-box">
-            📞 +91-930-806-4181 / +91-930-430-5454
+            📞 +917260996796 / +919504477896
           </div>
 
           <div className="info-box">

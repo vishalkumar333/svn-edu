@@ -105,7 +105,7 @@ export default function Services() {
 
         {/* WhatsApp Button */}
         <motion.a
-          href="https://wa.me/919308064181?text=Hi%20I%20want%20career%20counselling%20help"
+          href="https://wa.me/+917260996793?text=Hi%20I%20want%20career%20counselling%20help"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.08 }}

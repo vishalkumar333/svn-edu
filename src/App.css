@@ -1,92 +1,83 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: Arial;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, Arial, sans-serif;
 }
 
-/* Navbar */
-.navbar {
+/* PAGE BACKGROUND */
+body {
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* APP WRAPPER */
+.app-container {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  background: #0d47a1;
-  color: white;
-  padding: 15px;
+  flex-direction: column;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+/* NAVBAR FIXED STYLE SUPPORT (if needed) */
+nav {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1");
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
+/* ROUTE CONTENT AREA */
+.page-content {
+  flex: 1;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero h1 {
-  font-size: 40px;
+/* SECTION DEFAULT STYLE (for Hero, About, etc.) */
+section {
+  padding: 40px 20px;
 }
 
-.hero button {
-  padding: 10px 20px;
-  background: orange;
-  border: none;
-  cursor: pointer;
+/* HEADINGS */
+h1, h2, h3 {
+  color: #0f172a;
+  font-weight: 700;
 }
 
-/* Courses */
-.courses {
-  padding: 40px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
-}
-
-.card {
-  background: #f1f1f1;
-  padding: 15px;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
-/* Contact */
-.contact {
-  background: #0d47a1;
-  color: white;
-  text-align: center;
-  padding: 40px;
-}
-
-.buttons a {
-  margin: 10px;
-  padding: 12px 20px;
-  display: inline-block;
+/* LINKS */
+a {
   text-decoration: none;
+  color: inherit;
+}
+
+/* BUTTON BASE STYLE */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
   color: white;
-  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.call-btn {
-  background: green;
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
 }
 
-.whatsapp-btn {
-  background: #25D366;
-}
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 40px 15px;
+  }
 
-/* Hover Effects */
-.call-btn:hover {
-  background: darkgreen;
-}
-
-.whatsapp-btn:hover {
-  background: #128C7E;
+  section {
+    padding: 25px 15px;
+  }
 }
