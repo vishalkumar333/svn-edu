@@ -35,7 +35,7 @@ export default function Contact() {
           </div>
 
           <div className="info-box">
-            ✉️ careerdarpanconsultancy1@gmail.com
+            ✉️ svneducons@gmail.com
           </div>
         </div>
 
