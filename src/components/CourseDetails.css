@@ -1,0 +1,49 @@
+.details-page {
+  padding: 40px 8%;
+  font-family: Arial;
+}
+
+.info-box {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.college-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.college-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+.college-card:hover {
+  transform: translateY(-5px);
+}
+
+.rating {
+  margin-top: 8px;
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.apply-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+}

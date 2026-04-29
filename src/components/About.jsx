@@ -8,7 +8,7 @@ export default function About() {
       {/* HERO SECTION */}
       <div className="about-hero">
         <div className="about-text">
-          <h1>About Career Darpan Consultancy</h1>
+          <h1>About SVN Admission Zone</h1>
           <p>
             We help thousands of students pursue education and professional courses in India and abroad
             within an affordable budget.
@@ -28,7 +28,7 @@ export default function About() {
       <div className="about-content">
 
         <p>
-          Career Darpan Consultancy, based in Sultanpur, is a leading education consultancy established in 2013.
+          SVN Admission Zone, based in Patna, is a leading education consultancy established in 2016.
           We provide complete admission guidance and information for Indian students seeking admission in top
           universities and colleges in India and abroad.
         </p>
@@ -40,15 +40,57 @@ export default function About() {
         </p>
 
         <h2>Fields We Support</h2>
-        <ul>
-          <li>Medical (MBBS, BDS, BAMS, BHMS)</li>
-          <li>Engineering</li>
-          <li>MBA / PGDM / BBA</li>
-          <li>BCA / MCA</li>
-          <li>B.Pharmacy</li>
-          <li>Hotel Management</li>
-          <li>All Professional Courses</li>
-        </ul>
+        <ul className="course-list">
+  <li>
+    <strong>Medical</strong>
+    <span> — MBBS, BDS, BAMS, BHMS, Nursing, Pharmacy</span>
+  </li>
+
+  <li>
+    <strong>Engineering</strong>
+    <span> — B.Tech, BE, Polytechnic, Diploma</span>
+  </li>
+
+  <li>
+    <strong>Management</strong>
+    <span> — MBA, PGDM, BBA, Executive MBA</span>
+  </li>
+
+  <li>
+    <strong>IT & Computer</strong>
+    <span> — BCA, MCA, Data Science, AI/ML</span>
+  </li>
+
+  <li>
+    <strong>Pharmacy</strong>
+    <span> — B.Pharm, D.Pharm, M.Pharm</span>
+  </li>
+
+  <li>
+    <strong>Hotel Management</strong>
+    <span> — Hospitality, Tourism, Culinary Arts</span>
+  </li>
+
+  <li>
+    <strong>Law</strong>
+    <span> — LLB, BA LLB, Corporate Law</span>
+  </li>
+
+  <li>
+    <strong>Commerce</strong>
+    <span> — B.Com, M.Com, CA, CS</span>
+  </li>
+
+  <li>
+    <strong>Arts & Humanities</strong>
+    <span> — BA, Journalism, Psychology</span>
+  </li>
+
+  <li>
+    <strong>All Professional Courses</strong>
+    <span> — Explore 100+ career options across streams</span>
+  </li>
+</ul>
 
         <h2>Why Choose Us?</h2>
 

@@ -46,7 +46,7 @@ export default function Services() {
         transition={{ duration: 0.6 }}
       >
         <h1>Build Your Future With Confidence</h1>
-        <p>Our Services</p>
+        <p><b>Our Services</b></p>
       </motion.div>
 
       {/* SERVICES CARDS */}

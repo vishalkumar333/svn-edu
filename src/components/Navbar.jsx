@@ -34,7 +34,7 @@ export default function Navbar() {
           {/* LOGO */}
           <NavLink to="/" className="logo">
             <img src="/logo.png" alt="logo" />
-            <span>SVN <b>EduCon</b></span>
+            <span>SVN <b>Admission zone</b></span>
           </NavLink>
 
           {/* DESKTOP MENU */}

@@ -1,70 +1,133 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 
+
 export default function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { name, email, phone, message } = form;
+
+    const whatsappMessage = `Hello, I want admission guidance.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    const whatsappNumber = "7260996793";
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
+  };
+
   return (
     <div className="contact-page">
-
-      {/* Header */}
+      {/* HEADER */}
       <section className="contact-header">
         <h1>Contact Us</h1>
-        <p>
-          Contact our support team or make an appointment with our consultancy.
-        </p>
+        <p>Get expert admission guidance for top courses in India.</p>
       </section>
 
-      {/* Contact Section */}
+      {/* MAIN SECTION */}
       <div className="contact-container">
-
-        {/* Left Info */}
+        {/* LEFT INFO */}
         <div className="contact-info">
           <h3>Get In Touch</h3>
 
           <p>
-            Please contact us using the information below. For additional
-            information on our management consulting services, please visit
-            the appropriate page on our site.
+            Reach out for admission guidance in MBBS, Engineering, MBA, BCA,
+            Pharmacy, and more.
           </p>
 
           <div className="info-box">
-            📍 Ganga complex SBI life, near Nagarmall Kankarbagh. Patna (Bihar) - 800020
+            📍 Kankarbagh, Patna, Bihar - 800020
           </div>
 
           <div className="info-box">
-            📞 +917260996796 / +919504477896
+            📞 +91 7260996796 / +91 9504477896
           </div>
 
           <div className="info-box">
-            ✉️ svneducons@gmail.com
+            ✉️ svnadmissionzone@gmail.com
           </div>
+
+          {/* Directions */}
+          <a
+            href="https://www.google.com/maps?q=25.5941,85.1456"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="direction-btn"
+          >
+            📍 Get Directions
+          </a>
         </div>
 
-        {/* Right Form */}
-        <form className="contact-form">
+        {/* FORM */}
+        <form className="contact-form" onSubmit={handleSubmit}>
           <h3>Send Message</h3>
 
-          <input type="text" placeholder="Enter Your Full Name" />
-          <input type="email" placeholder="Enter Your Email Address" />
-          <input type="tel" placeholder="Enter Your Phone Number" />
-          <textarea rows="5" placeholder="Write Something.."></textarea>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Full Name"
+            required
+            onChange={handleChange}
+          />
 
-          <button type="submit">SUBMIT YOUR APPLICATION</button>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            required
+            onChange={handleChange}
+          />
+
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter Your Phone Number"
+            required
+            onChange={handleChange}
+          />
+
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your query..."
+            onChange={handleChange}
+          ></textarea>
+
+          <button type="submit">Submit & Chat on WhatsApp</button>
         </form>
       </div>
 
-      {/* Google Map */}
+      {/* MAP */}
       <div className="map-section">
         <h3>Find Us Here</h3>
 
         <iframe
-          title="Career Darpan Consultancy Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.05123456789!2d85.1456!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed593dxxxxxxx%3A0xabcdef123456!2sKankarbagh%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1710000000000"
+          title="Location Map"
+          src="https://www.google.com/maps?q=25.5941,85.1456&z=15&output=embed"
           width="100%"
           height="350"
           style={{ border: 0 }}
-          allowFullScreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </div>
